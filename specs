@@ -1,8 +1,8 @@
 Logic Specs
 
-take input of search string and target string.
-iterate through search string and detect matching characters, in sequence, in total, of the target string in the search string.
-return number of ocurances
+* take input of search string and target string.
+* iterate through search string and detect matching characters, in sequence, in total, of the target string in the search string.
+* return number of ocurances
   BONUS display positions where each word is detected
 
 

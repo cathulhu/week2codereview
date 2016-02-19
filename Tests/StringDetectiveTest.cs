@@ -2,31 +2,31 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace StringDetectiveNamespace
+namespace RepeatCounterNameSpace
 {
-  public class StringDetectiveTest
+  public class RepeatCounterTest
   {
     [Fact]
-    public void Search_Matchingwholestring_true()
+    public void CountRepeats_Matchingwholestring_true()
     {
-      StringDetective newStringDetective = new StringDetective("cat", "cat");
+      RepeatCounter newRepeatCounter = new RepeatCounter("cat", "cat");
       //  Console.WriteLine("Test output: " + newAnagram.GetInput());
-      Assert.Equal(1, newStringDetective.Search());
+      Assert.Equal(1, newRepeatCounter.CountRepeats());
     }
-    //will handle -42 as special case on razor page
+
     [Fact]
-    public void Search_PartialDoesntClaimFullmatch_false()
+    public void CountRepeats_PartialDoesntClaimFullmatch_false()
     {
-      StringDetective newStringDetective = new StringDetective("catcat", "cat");
+      RepeatCounter newRepeatCounter = new RepeatCounter("catcat", "cat");
       //  Console.WriteLine("Test output: " + newAnagram.GetInput());
-      Assert.NotEqual(1, newStringDetective.Search());
+      Assert.NotEqual(1, newRepeatCounter.CountRepeats());
     }
     //string with multiple versions of target should NOT register as equivolent
     [Fact]
-    public void Search_returnOccurancesOfFullword_true()
+    public void CountRepeats_returnOccurancesOfFullword_true()
     {
-      StringDetective newStringDetective = new StringDetective("catcatcat", "cat");
-      Assert.Equal(3, newStringDetective.Search());
+      RepeatCounter newRepeatCounter = new RepeatCounter("catcatcat", "cat");
+      Assert.Equal(3, newRepeatCounter.CountRepeats());
     }
     //standard detection behaviour to find subwords that match target in composition and order of letters;
 
@@ -44,11 +44,11 @@ namespace StringDetectiveNamespace
       //substring length abbaration was occuring because search bounds were getting declared each iteration of the loop (thus changing because they are based on moves until out of bounds)
 
       [Fact]
-      public void Search_returnOccurancesOfFullWordWithInteruptionsAndNonSequence_true()
+      public void CountRepeats_returnOccurancesOfFullWordWithInteruptionsAndNonSequence_true()
       {
-        StringDetective newStringDetective = new StringDetective("catzzacatcatacartcat", "cat");
+        RepeatCounter newRepeatCounter = new RepeatCounter("catzzacatcatacartcat", "cat");
         //  Console.WriteLine("Test output: " + newAnagram.GetInput());
-        Assert.Equal(4, newStringDetective.Search());
+        Assert.Equal(4, newRepeatCounter.CountRepeats());
       }
 
   }

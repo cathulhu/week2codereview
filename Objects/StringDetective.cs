@@ -2,23 +2,23 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace StringDetectiveNamespace
+namespace RepeatCounterNameSpace
 {
-  public class StringDetective
+  public class RepeatCounter
   {
     private string _candidateString;
     private string _targetString;
     //private int array for occurances would be here I think
 
 
-      public StringDetective (string stringToSearch, string target)
+      public RepeatCounter (string stringToSearch, string target)
       {
         _candidateString=stringToSearch;
         _targetString=target;
         //maybe put a data structure here to store locations of matches?
       }
 
-      public int Search()
+      public int CountRepeats()
       {
         int numOfOccurances = 0;
         int targetlength = 0;
@@ -61,6 +61,13 @@ namespace StringDetectiveNamespace
           }
 
         }
+        //oh jeez, after looking online it looks like I could have just use a simple regex
+        //string regexString = @thingtosearcfor;
+        //target = Regex.Escape(regexString);
+        //string userinput;
+        //string output = userinput.Regex.Replace(userinput, target, "")
+        //int occurances = (output.length - input.length) / target.length
+        //just a code monkey with computer scientist delusions of grandeur I guess...
 
         return numOfOccurances;
       }
