@@ -11,7 +11,7 @@ namespace StringDetectiveNamespace
     {
       StringDetective newStringDetective = new StringDetective("cat", "cat");
       //  Console.WriteLine("Test output: " + newAnagram.GetInput());
-      Assert.Equal(-42, newStringDetective.Search());
+      Assert.Equal(1, newStringDetective.Search());
     }
     //will handle -42 as special case on razor page
     [Fact]
@@ -19,7 +19,7 @@ namespace StringDetectiveNamespace
     {
       StringDetective newStringDetective = new StringDetective("catcat", "cat");
       //  Console.WriteLine("Test output: " + newAnagram.GetInput());
-      Assert.NotEqual(-42, newStringDetective.Search());
+      Assert.NotEqual(1, newStringDetective.Search());
     }
     //string with multiple versions of target should NOT register as equivolent
     [Fact]

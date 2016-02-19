@@ -30,9 +30,8 @@ namespace StringDetectiveNamespace
 
         if (_candidateString == _targetString)  //testing if strings are 100% identical saves time, especially for big strings
         {
-          numOfOccurances=-42;
+          numOfOccurances=1;
         }
-
         else
         {
           candidateToArray = new char[_candidateString.Length];
