@@ -10,15 +10,14 @@ namespace RepeatCounterNameSpace
     public void CountRepeats_Matchingwholestring_true()
     {
       RepeatCounter newRepeatCounter = new RepeatCounter("cat", "cat");
-      //  Console.WriteLine("Test output: " + newAnagram.GetInput());
       Assert.Equal(1, newRepeatCounter.CountRepeats());
+      //test of functionality to detect 1 to 1 correspondance so identical strings chosen
     }
 
     [Fact]
     public void CountRepeats_PartialDoesntClaimFullmatch_false()
     {
       RepeatCounter newRepeatCounter = new RepeatCounter("catcat", "cat");
-      //  Console.WriteLine("Test output: " + newAnagram.GetInput());
       Assert.NotEqual(1, newRepeatCounter.CountRepeats());
     }
     //string with multiple versions of target should NOT register as equivolent

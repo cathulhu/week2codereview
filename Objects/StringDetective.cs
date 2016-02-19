@@ -41,17 +41,17 @@ namespace RepeatCounterNameSpace
           movesUntilOutOfBounds = _candidateString.Length - targetlength;
           int searchBounds = candidatelength - (movesUntilOutOfBounds);
 
-                      Console.WriteLine("Candidate Length:" + candidatelength);
-                      Console.WriteLine("Target Length:" + targetlength);
-                      Console.WriteLine("Moves Left, Start:" + movesUntilOutOfBounds);
-                      Console.WriteLine("searchBounds:" + searchBounds + "\n");
+                      // Console.WriteLine("Candidate Length:" + candidatelength);
+                      // Console.WriteLine("Target Length:" + targetlength);
+                      // Console.WriteLine("Moves Left, Start:" + movesUntilOutOfBounds);
+                      // Console.WriteLine("searchBounds:" + searchBounds + "\n");
 
           for (int i=0; movesUntilOutOfBounds >= 0 ; i++)
           {
             subSearchCandidate = _candidateString.Substring( i, searchBounds );
-                    Console.WriteLine("Search Coord:" + i + " " + (i+searchBounds));
-                    Console.WriteLine("Substring: " + subSearchCandidate);
-            //  |xxx|xx   x|xxx|x   xx|xxx|
+                    // Console.WriteLine("Search Coord:" + i + " " + (i+searchBounds));
+                    // Console.WriteLine("Substring: " + subSearchCandidate);
+            //  |xxx|xx   x|xxx|x   xx|xxx|   <-- search frame logic
             //  0-2        1-3        2-4
             if (subSearchCandidate == _targetString)
             {

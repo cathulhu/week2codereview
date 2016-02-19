@@ -2,14 +2,28 @@ Logic Specs
 
 * take input of search string and target string.
 * iterate through search string and detect matching characters, in sequence, in total, of the target string in the search string.
-* return number of ocurances
-  BONUS display positions where each word is detected
+* return number of occurrences
 
+test1, Input= search="cat", target="cat"
+       output= 1
+       why? this should test the positive ID of the perfect match functionality
+
+test1,  Input= search="catcat", target="cat"
+        output= 1
+        why? this should test the negative ID of the perfect match functionality
+
+test1,  Input= search="catcatcat", target="cat"
+        output= 3
+        why? test of substring detection functionality, should pickup the 3 occurrences
+
+test1,  Input= search="catzzacatcatacartcat", target="cat"
+        output= 4
+        why? test of substring detection functionality in the face of non contiguous occurrences, partial matches, and longer string
+        output should be 4
 
 Interface Specs
 
-User should have a form to enter the string to search
-  Form should also contain a field for the target string to search for
+* User should have a form to enter the string to search
+  * Form should also contain a field for the target string to search for
 
-After submission a new page will relate the string that was searched and note any ocurances of the target string
-  Possibly add functionality to highlight the position where each character of full matching word was found
+* After submission a new page will relate the string that was searched and note any occurrences of the target string
