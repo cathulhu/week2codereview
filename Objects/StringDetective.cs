@@ -47,7 +47,7 @@ namespace StringDetectiveNamespace
                       Console.WriteLine("Moves Left, Start:" + movesUntilOutOfBounds);
                       Console.WriteLine("searchBounds:" + searchBounds + "\n");
 
-          for (int i=0; movesUntilOutOfBounds > 0 ; i++)
+          for (int i=0; movesUntilOutOfBounds >= 0 ; i++)
           {
             subSearchCandidate = _candidateString.Substring( i, searchBounds );
                     Console.WriteLine("Search Coord:" + i + " " + (i+searchBounds));
