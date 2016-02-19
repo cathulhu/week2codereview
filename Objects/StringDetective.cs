@@ -22,6 +22,7 @@ namespace StringDetectiveNamespace
       {
         int numOfOccurances = 0;
         int targetlength = 0;
+        int candidatelength = 0;
         int movesUntilOutOfBounds = 0;
         char[] candidateToArray;
         // char[] targetToArray; don't need this
@@ -37,12 +38,20 @@ namespace StringDetectiveNamespace
           candidateToArray = new char[_candidateString.Length];
           candidateToArray = _candidateString.ToCharArray();
           targetlength = _targetString.Length;
+          candidatelength = _candidateString.Length;
           movesUntilOutOfBounds = _candidateString.Length - targetlength;
+          int searchBounds = candidatelength - (movesUntilOutOfBounds);
+
+                      Console.WriteLine("Candidate Length:" + candidatelength);
+                      Console.WriteLine("Target Length:" + targetlength);
+                      Console.WriteLine("Moves Left, Start:" + movesUntilOutOfBounds);
+                      Console.WriteLine("searchBounds:" + searchBounds + "\n");
 
           for (int i=0; movesUntilOutOfBounds > 0 ; i++)
           {
-            Console.WriteLine("Search Coord:" + i + " " + movesUntilOutOfBounds);
-            subSearchCandidate= _candidateString.Substring( i, (i+movesUntilOutOfBounds-1) );
+            subSearchCandidate = _candidateString.Substring( i, searchBounds );
+                    Console.WriteLine("Search Coord:" + i + " " + (i+searchBounds));
+                    Console.WriteLine("Substring: " + subSearchCandidate);
             //  |xxx|xx   x|xxx|x   xx|xxx|
             //  0-2        1-3        2-4
             if (subSearchCandidate == _targetString)
