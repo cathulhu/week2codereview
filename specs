@@ -1,4 +1,15 @@
 Logic Specs
 
+take input of search string and target string.
+iterate through search string and detect matching characters, in sequence, in total, of the target string in the search string.
+return number of ocurances
+  BONUS display positions where each word is detected
+
 
 Interface Specs
+
+User should have a form to enter the string to search
+  Form should also contain a field for the target string to search for
+
+After submission a new page will relate the string that was searched and note any ocurances of the target string
+  Possibly add functionality to highlight the position where each character of full matching word was found

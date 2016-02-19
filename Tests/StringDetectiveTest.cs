@@ -4,14 +4,14 @@ using Xunit;
 
 namespace StringDetectiveNamespace
 {
-  public class StringDetective
+  public class StringDetectiveTest
   {
     [Fact]
-    public void StringDetective_Matching_true()
+    public void Search_Matchingwholestring_true()
     {
-      StringDetective newStringDetective = new StringDetective("someinput?");
+      StringDetective newStringDetective = new StringDetective("cat", "cat");
       //  Console.WriteLine("Test output: " + newAnagram.GetInput());
-      Assert.Equal("someinput", newStringDetective.Dosomething());
+      Assert.Equal(1, newStringDetective.Search());
     }
 
 
